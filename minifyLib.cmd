@@ -1,0 +1,1 @@
+npx minify lib/event-target-strict.js > lib/event-target-strict.min.js

@@ -1,0 +1,45 @@
+<html>
+
+<div style="background:red" id="divError"></div>
+<table id="pre" border="1"><tbody id="tbody"></tbody></table>
+
+<SCRIPT type="module">
+	import EventTargetStrict from "http://127.0.0.1:8080/lib/event-target-strict.js"
+
+
+
+	function test1(s) {
+		let result = eval(s);
+		//pre.insertAdjacentHTML('beforebegin', `<TR><TD>${s}</TD><TD>${eval(s)}</TD></TR>`);
+		let tr = document.createElement("tr");
+		if (result.cause)
+			tr.style.color = "#700";
+		else
+			tr.style.color = "#070";
+		let td1 = document.createElement("td");
+		td1.innerText = s;
+		tr.appendChild(td1);
+		let td2 = document.createElement("td");
+		td2.innerText = result.cause;
+		tr.appendChild(td2);
+		let td3 = document.createElement("td");
+		td3.innerText = result.name;
+		tr.appendChild(td3);
+		let td4 = document.createElement("td");
+		td4.innerText = result.value;
+		tr.appendChild(td4);
+		tbody.appendChild(tr);
+	}
+	try {
+		test1(`typeof null`)
+		test1(`null===undefined`)
+		test1(`valda.defined.analyse();`)
+		test1(`valda.defined.analyse(undefined);`)
+		test1(`valda.defined.analyse(null);`)
+		test1(`valda.defined.analyse(NaN);`)
+
+
+	} catch (err) { divError.innerText = err; }
+
+</SCRIPT>
+</html>
