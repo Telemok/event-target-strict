@@ -1,0 +1,29 @@
+{
+  "name": "@telemok/event-target-strict",
+  "version": "0.0.2",
+  "description": "Javascript ES6 EventTarget with .destroy() instead of .removeEventListener()",
+  "main": "lib/event-target-strict.min.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "eventTarget",
+    "destroy"
+  ],
+  "author": "<www.telemok.com@gmail.com> https://github.com/Telemok",
+  "license": "Apache-2.0",
+  "type": "module",
+  "homepage": "https://github.com/Telemok/event-target-strict",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Telemok/event-target-strict.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/",
+    "name": "@telemok/event-target-strict"
+  },
+  "dependencies": {
+    "np": "^7.6.2"
+  }
+}
